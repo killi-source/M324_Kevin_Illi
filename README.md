@@ -60,3 +60,15 @@ Update package versions after the cooldown check:
 npm run update-packages
 npm install
 ```
+
+Demonstrate npx:
+
+```bash
+npm run npx-demo
+```
+
+## npm vs npx
+
+`npm` is the Node package manager. It installs packages, updates dependencies, and runs scripts from `package.json`, for example `npm install` or `npm run start`.
+
+`npx` executes a package binary. It first looks for the binary in the local project dependencies. If the binary is not installed locally and a package is requested explicitly, it can download and run it. In this project, `npm run npx-demo` uses `npx` to run the locally installed `npm-check-updates` binary.

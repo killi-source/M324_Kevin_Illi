@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node index.js",
     "check-updates": "npx npm-check-updates --cooldown 3",
-    "update-packages": "npx npm-check-updates --cooldown 3 -u"
+    "update-packages": "npx npm-check-updates --cooldown 3 -u",
+    "npx-demo": "npx npm-check-updates --version"
   },
   "dependencies": {
     "chalk": "^6.0.0"
