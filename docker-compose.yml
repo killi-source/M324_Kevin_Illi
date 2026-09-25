@@ -1,0 +1,6 @@
+services:
+  app:
+    build: .
+    volumes:
+      # Bind mount: links the current host directory (./) to the container's working directory (/app)
+      - ./:/app
