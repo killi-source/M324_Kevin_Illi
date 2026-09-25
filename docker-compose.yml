@@ -1,0 +1,10 @@
+services:
+  node:
+    build: .
+    container_name: m324-node
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sleep infinity
+    tty: true
+    stdin_open: true
