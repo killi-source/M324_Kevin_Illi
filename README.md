@@ -47,3 +47,16 @@ Expected output:
 ```text
 Hello, World!
 ```
+
+Check available package updates with a cooldown window:
+
+```bash
+npm run check-updates
+```
+
+Update package versions after the cooldown check:
+
+```bash
+npm run update-packages
+npm install
+```
