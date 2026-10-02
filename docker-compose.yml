@@ -4,6 +4,7 @@ services:
     container_name: m324-node
     working_dir: /app
     volumes:
+      # Bind mount: links the current host directory (./) to the container's working directory (/app)
       - .:/app
     command: sleep infinity
     tty: true
