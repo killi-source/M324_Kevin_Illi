@@ -1,3 +1,8 @@
 import chalk from "chalk";
 
-console.log(chalk.green("It works"));
+let myUnusedVariable = "unused";
+
+const answer = 42;
+if (answer == "42") {
+  console.log(chalk.green("It works"));
+}
