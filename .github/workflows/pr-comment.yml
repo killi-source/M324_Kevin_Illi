@@ -1,0 +1,19 @@
+name: Welcome pull requests
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  welcome:
+    name: Add pull-request comment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post a welcome message
+        uses: thollander/actions-comment-pull-request@24bffb9b452ba05a4f3f77933840a6a841d1b32b # v3
+        with:
+          message: |
+            Thanks for opening this pull request. The automated quality checks will run shortly.
