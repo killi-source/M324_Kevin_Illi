@@ -1,0 +1,25 @@
+name: Report wiki changes
+
+on:
+  gollum:
+
+permissions:
+  contents: read
+
+jobs:
+  wiki-summary:
+    name: Summarize edited wiki pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add the wiki edit to the workflow summary
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          script: |
+            const pages = context.payload.pages ?? [];
+            const lines = pages.map(
+              ({ action, page_name, html_url }) => `- ${action}: [${page_name}](${html_url})`,
+            );
+            await core.summary
+              .addHeading('Wiki changes')
+              .addRaw(lines.join('\n') || 'No page metadata was supplied.')
+              .write();

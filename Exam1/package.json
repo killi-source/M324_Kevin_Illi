@@ -8,6 +8,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "test": "node --test test/*.test.js",
     "convert": "node convert.js"
   },
   "keywords": [],
