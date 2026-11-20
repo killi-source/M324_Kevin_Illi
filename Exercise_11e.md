@@ -39,17 +39,19 @@ from `package-lock.json`; it does not update the lockfile. It fails if the lockf
 is missing or does not agree with `package.json`, which makes dependency drift
 visible instead of silently changing the build.
 
-Run evidence must be added after pushing: open a PR from `ci_cd` to `main`, add
-the resulting PR and Actions-run links here, then introduce and repair one lint,
-formatting and test failure in separate commits. This local branch has not yet been
-pushed, so no run link is claimed here.
+The workflow passed on [pull request #1](https://github.com/killi-source/M324_Kevin_Illi/pull/1):
+[CI run 44718213594](https://github.com/killi-source/M324_Kevin_Illi/actions/runs/44718213594).
+Before submission, introduce and repair one lint, formatting and test failure in
+separate commits and inspect the corresponding failed checks.
 
 ## Task 2 – Pull-request comment
 
 `.github/workflows/pr-comment.yml` runs only for a newly opened pull request. It
 uses Comment Pull Request to add a short welcome message. The job needs only
 `pull-requests: write`, which permits creating the comment; it does not check out
-or execute code from the PR. After opening a test PR, add its link here.
+or execute code from the PR. It completed successfully for
+[pull request #1](https://github.com/killi-source/M324_Kevin_Illi/pull/1):
+[workflow run 44718213939](https://github.com/killi-source/M324_Kevin_Illi/actions/runs/44718213939).
 
 ## Task 3 – Gollum
 
@@ -75,8 +77,9 @@ resulting run link here after checking the log and cache result.
 `main`, plus manual dispatch. It checks out the repository and uses Scan Virus with
 the current ClamAV signatures to scan the checked-out files. The final job has
 `if: ${{ false }}` at job level as requested, so GitHub should display it as
-skipped. Before adding that condition, run the same workflow once and record the
-scan output and skipped-job run links here.
+skipped; this is confirmed by
+[workflow run 44718213868](https://github.com/killi-source/M324_Kevin_Illi/actions/runs/44718213868).
+Before adding that condition, run the same workflow once and record the scan output.
 
 Malware scanning can detect known signatures but cannot guarantee that a repository
 contains no malicious content: new, obfuscated, encrypted, remote, or unscanned
